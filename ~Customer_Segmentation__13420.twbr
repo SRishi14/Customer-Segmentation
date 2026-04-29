@@ -1,0 +1,2159 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.IndividualControlFormatting.true...IndividualControlFormatting />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='customers_segmented+' inline='true' name='federated.0jh68mc1e4hvsw11e64by09ibv76' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='customers_segmented' name='textscan.012k7pr1d8xiuz14zo53q0n39jbi'>
+            <connection class='textscan' directory='D:/Projects/Customer segmentation/output' filename='customers_segmented.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.012k7pr1d8xiuz14zo53q0n39jbi' name='customers_segmented.csv' table='[customers_segmented#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='CustomerID' ordinal='0' />
+              <column datatype='string' name='Country' ordinal='1' />
+              <column datatype='string' name='Segment' ordinal='2' />
+              <column datatype='integer' name='SegmentRank' ordinal='3' />
+              <column datatype='string' name='Cluster' ordinal='4' />
+              <column datatype='integer' name='Recency' ordinal='5' />
+              <column datatype='integer' name='Frequency' ordinal='6' />
+              <column datatype='real' name='Monetary' ordinal='7' />
+              <column datatype='integer' name='TotalItems' ordinal='8' />
+              <column datatype='integer' name='R_Score' ordinal='9' />
+              <column datatype='integer' name='F_Score' ordinal='10' />
+              <column datatype='integer' name='M_Score' ordinal='11' />
+              <column datatype='integer' name='RFM_Score' ordinal='12' />
+              <column datatype='datetime' name='FirstPurchase' ordinal='13' />
+              <column datatype='datetime' name='LastPurchase' ordinal='14' />
+              <column datatype='real' name='PC1' ordinal='15' />
+              <column datatype='real' name='PC2' ordinal='16' />
+            </columns>
+          </relation>
+          <relation connection='textscan.012k7pr1d8xiuz14zo53q0n39jbi' name='transactions_enriched.csv' table='[transactions_enriched#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='InvoiceNo' ordinal='0' />
+              <column datatype='string' name='StockCode' ordinal='1' />
+              <column datatype='string' name='Description' ordinal='2' />
+              <column datatype='integer' name='Quantity' ordinal='3' />
+              <column datatype='datetime' name='InvoiceDate' ordinal='4' />
+              <column datatype='real' name='UnitPrice' ordinal='5' />
+              <column datatype='string' name='CustomerID' ordinal='6' />
+              <column datatype='string' name='Country' ordinal='7' />
+              <column datatype='real' name='TotalPrice' ordinal='8' />
+              <column datatype='string' name='Segment' ordinal='9' />
+              <column datatype='integer' name='SegmentRank' ordinal='10' />
+              <column datatype='integer' name='R_Score' ordinal='11' />
+              <column datatype='integer' name='F_Score' ordinal='12' />
+              <column datatype='integer' name='M_Score' ordinal='13' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Cluster]' value='[customers_segmented.csv].[Cluster]' />
+          <map key='[Country (transactions_enriched.csv)]' value='[transactions_enriched.csv].[Country]' />
+          <map key='[Country]' value='[customers_segmented.csv].[Country]' />
+          <map key='[CustomerID (transactions_enriched.csv)]' value='[transactions_enriched.csv].[CustomerID]' />
+          <map key='[CustomerID]' value='[customers_segmented.csv].[CustomerID]' />
+          <map key='[Description]' value='[transactions_enriched.csv].[Description]' />
+          <map key='[F_Score (transactions_enriched.csv)]' value='[transactions_enriched.csv].[F_Score]' />
+          <map key='[F_Score]' value='[customers_segmented.csv].[F_Score]' />
+          <map key='[FirstPurchase]' value='[customers_segmented.csv].[FirstPurchase]' />
+          <map key='[Frequency]' value='[customers_segmented.csv].[Frequency]' />
+          <map key='[InvoiceDate]' value='[transactions_enriched.csv].[InvoiceDate]' />
+          <map key='[InvoiceNo]' value='[transactions_enriched.csv].[InvoiceNo]' />
+          <map key='[LastPurchase]' value='[customers_segmented.csv].[LastPurchase]' />
+          <map key='[M_Score (transactions_enriched.csv)]' value='[transactions_enriched.csv].[M_Score]' />
+          <map key='[M_Score]' value='[customers_segmented.csv].[M_Score]' />
+          <map key='[Monetary]' value='[customers_segmented.csv].[Monetary]' />
+          <map key='[PC1]' value='[customers_segmented.csv].[PC1]' />
+          <map key='[PC2]' value='[customers_segmented.csv].[PC2]' />
+          <map key='[Quantity]' value='[transactions_enriched.csv].[Quantity]' />
+          <map key='[RFM_Score]' value='[customers_segmented.csv].[RFM_Score]' />
+          <map key='[R_Score (transactions_enriched.csv)]' value='[transactions_enriched.csv].[R_Score]' />
+          <map key='[R_Score]' value='[customers_segmented.csv].[R_Score]' />
+          <map key='[Recency]' value='[customers_segmented.csv].[Recency]' />
+          <map key='[Segment (transactions_enriched.csv)]' value='[transactions_enriched.csv].[Segment]' />
+          <map key='[SegmentRank (transactions_enriched.csv)]' value='[transactions_enriched.csv].[SegmentRank]' />
+          <map key='[SegmentRank]' value='[customers_segmented.csv].[SegmentRank]' />
+          <map key='[Segment]' value='[customers_segmented.csv].[Segment]' />
+          <map key='[StockCode]' value='[transactions_enriched.csv].[StockCode]' />
+          <map key='[TotalItems]' value='[customers_segmented.csv].[TotalItems]' />
+          <map key='[TotalPrice]' value='[transactions_enriched.csv].[TotalPrice]' />
+          <map key='[UnitPrice]' value='[transactions_enriched.csv].[UnitPrice]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CustomerID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CustomerID]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>CustomerID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Segment]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>Segment</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SegmentRank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SegmentRank]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>SegmentRank</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Cluster]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>Cluster</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Recency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Recency]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>Recency</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Frequency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Frequency]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>Frequency</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Monetary</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Monetary]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>Monetary</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TotalItems</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TotalItems]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>TotalItems</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>R_Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[R_Score]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>R_Score</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F_Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F_Score]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>F_Score</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>M_Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[M_Score]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>M_Score</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RFM_Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RFM_Score]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>RFM_Score</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FirstPurchase</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[FirstPurchase]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>FirstPurchase</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LastPurchase</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[LastPurchase]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>LastPurchase</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PC1</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PC1]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>PC1</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PC2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PC2]</local-name>
+            <parent-name>[customers_segmented.csv]</parent-name>
+            <remote-alias>PC2</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>InvoiceNo</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[InvoiceNo]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>InvoiceNo</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StockCode</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[StockCode]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>StockCode</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Description]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>Description</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quantity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Quantity]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>Quantity</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>InvoiceDate</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[InvoiceDate]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>InvoiceDate</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UnitPrice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[UnitPrice]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>UnitPrice</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CustomerID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CustomerID (transactions_enriched.csv)]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>CustomerID</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country (transactions_enriched.csv)]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TotalPrice</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TotalPrice]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>TotalPrice</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Segment (transactions_enriched.csv)]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>Segment</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SegmentRank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SegmentRank (transactions_enriched.csv)]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>SegmentRank</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>R_Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[R_Score (transactions_enriched.csv)]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>R_Score</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F_Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F_Score (transactions_enriched.csv)]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>F_Score</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>M_Score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[M_Score (transactions_enriched.csv)]</local-name>
+            <parent-name>[transactions_enriched.csv]</parent-name>
+            <remote-alias>M_Score</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:CustomerID:qk]&quot;' value='Customers' />
+          <alias key='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Frequency:qk]&quot;' value='Frequency' />
+          <alias key='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Monetary:qk]&quot;' value='Monetary (£)' />
+          <alias key='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Recency:qk]&quot;' value='Recency (days)' />
+        </aliases>
+      </column>
+      <column caption='Total customers in view' datatype='integer' name='[Calculation_2364564309000192]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([CustomerID])' />
+      </column>
+      <column caption='Segment revenue share' datatype='real' name='[Calculation_2364564309499906]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Monetary])/TOTAL(SUM([Monetary]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Label for segment cards: &quot;Champions · 812 customers · £2.1M&quot;' datatype='real' name='[Calculation_2364564309803011]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Segment] + &quot;.&quot; + STR(COUNTD([CustomerID])) + &quot; customers · £&quot; +&#13;&#10;IF SUM([Monetary]) &gt;= 1000000&#13;&#10;    THEN STR(ROUND(SUM([Monetary])/1000000, 1)) + &quot;M&quot;&#13;&#10;    ELSEIF SUM([Monetary]) &gt;= 1000&#13;&#10;    THEN STR(ROUND(SUM([Monetary])/1000,0)) + &quot;K&quot;&#13;&#10;    ELSE STR(ROUND(SUM([Monetary]),0))&#13;&#10;END' />
+      </column>
+      <column caption='Total revenue' datatype='real' name='[Calculation_2364564312104966]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([TotalPrice])' />
+      </column>
+      <column caption='Average order value' datatype='real' name='[Calculation_2364564312379399]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([TotalPrice])/COUNTD([InvoiceNo])' />
+      </column>
+      <column caption='Total orders' datatype='integer' name='[Calculation_2364564312670216]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([InvoiceNo])' />
+      </column>
+      <column caption='Label for segment cards' datatype='string' name='[Calculation_2364564313149449]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF SUM([Monetary]) &gt;= 1000000&#13;&#10;    THEN STR(ROUND(SUM([Monetary])/1000000, 1)) + &quot;M&quot;&#13;&#10;    ELSEIF SUM([Monetary]) &gt;= 1000&#13;&#10;    THEN STR(ROUND(SUM([Monetary])/1000, 0)) + &quot;K&quot;&#13;&#10;    ELSE STR(ROUND(SUM([Monetary]), 0))&#13;&#10;END' />
+      </column>
+      <column caption='Total Segments' datatype='integer' name='[Calculation_2364564319629322]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([Segment])' />
+      </column>
+      <column caption='Segment Customer Share' datatype='real' name='[Calculation_2364564328374284]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([CustomerID]) / TOTAL(COUNTD([CustomerID]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Country (transactions enriched.csv)' datatype='string' name='[Country (transactions_enriched.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='CustomerID (transactions enriched.csv)' datatype='string' name='[CustomerID (transactions_enriched.csv)]' role='dimension' type='nominal' />
+      <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+      <column caption='F Score (transactions enriched.csv)' datatype='integer' name='[F_Score (transactions_enriched.csv)]' role='measure' type='quantitative' />
+      <column caption='F Score' datatype='integer' name='[F_Score]' role='measure' type='quantitative' />
+      <column caption='First Purchase' datatype='datetime' name='[FirstPurchase]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Frequency]' role='measure' type='quantitative' />
+      <column caption='Invoice Date' datatype='datetime' name='[InvoiceDate]' role='dimension' type='ordinal' />
+      <column caption='Invoice No' datatype='integer' name='[InvoiceNo]' role='measure' type='quantitative' />
+      <column caption='Last Purchase' datatype='datetime' name='[LastPurchase]' role='dimension' type='ordinal' />
+      <column caption='M Score (transactions enriched.csv)' datatype='integer' name='[M_Score (transactions_enriched.csv)]' role='measure' type='quantitative' />
+      <column caption='M Score' datatype='integer' name='[M_Score]' role='measure' type='quantitative' />
+      <column datatype='real' name='[Monetary]' role='measure' type='quantitative' />
+      <column datatype='real' name='[PC1]' role='measure' type='quantitative' />
+      <column datatype='real' name='[PC2]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Quantity]' role='measure' type='quantitative' />
+      <column caption='RFM Score' datatype='integer' name='[RFM_Score]' role='measure' type='quantitative' />
+      <column caption='R Score (transactions enriched.csv)' datatype='integer' name='[R_Score (transactions_enriched.csv)]' role='measure' type='quantitative' />
+      <column caption='R Score' datatype='integer' name='[R_Score]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Recency]' role='measure' type='quantitative' />
+      <column caption='Segment (transactions enriched.csv)' datatype='string' name='[Segment (transactions_enriched.csv)]' role='dimension' type='nominal' />
+      <column caption='SegmentRank (transactions enriched.csv)' datatype='integer' name='[SegmentRank (transactions_enriched.csv)]' role='measure' type='quantitative' />
+      <column caption='Segment Rank' datatype='integer' name='[SegmentRank]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
+      <column caption='Stock Code' datatype='string' name='[StockCode]' role='dimension' type='nominal' />
+      <column caption='Total Items' datatype='integer' name='[TotalItems]' role='measure' type='quantitative' />
+      <column caption='Total Price' datatype='real' name='[TotalPrice]' role='measure' type='quantitative' />
+      <column caption='Unit Price' datatype='real' name='[UnitPrice]' role='measure' type='quantitative' />
+      <column caption='customers_segmented.csv' datatype='table' name='[__tableau_internal_object_id__].[customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1]' role='measure' type='quantitative' />
+      <column caption='transactions_enriched.csv' datatype='table' name='[__tableau_internal_object_id__].[transactions_enriched.csv_D88ED00C3E7347D28037204787E50345]' role='measure' type='quantitative' />
+      <column-instance column='[Frequency]' derivation='Avg' name='[avg:Frequency:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Monetary]' derivation='Avg' name='[avg:Monetary:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Recency]' derivation='Avg' name='[avg:Recency:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[CustomerID]' derivation='CountD' name='[ctd:CustomerID:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Recency]' derivation='Median' name='[med:Recency:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Frequency]' derivation='Min' name='[min:Frequency:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Monetary]' derivation='Min' name='[min:Monetary:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Recency]' derivation='Min' name='[min:Recency:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+      <column-instance column='[CustomerID]' derivation='None' name='[none:CustomerID:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Segment (transactions_enriched.csv)]' derivation='None' name='[none:Segment (transactions_enriched.csv):nk]' pivot='key' type='nominal' />
+      <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
+      <column-instance column='[F_Score (transactions_enriched.csv)]' derivation='Sum' name='[sum:F_Score (transactions_enriched.csv):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[F_Score]' derivation='Sum' name='[sum:F_Score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Frequency]' derivation='Sum' name='[sum:Frequency:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[InvoiceNo]' derivation='Sum' name='[sum:InvoiceNo:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[M_Score (transactions_enriched.csv)]' derivation='Sum' name='[sum:M_Score (transactions_enriched.csv):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[M_Score]' derivation='Sum' name='[sum:M_Score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Monetary]' derivation='Sum' name='[sum:Monetary:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[PC1]' derivation='Sum' name='[sum:PC1:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[PC2]' derivation='Sum' name='[sum:PC2:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Quantity]' derivation='Sum' name='[sum:Quantity:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[RFM_Score]' derivation='Sum' name='[sum:RFM_Score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[R_Score (transactions_enriched.csv)]' derivation='Sum' name='[sum:R_Score (transactions_enriched.csv):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[R_Score]' derivation='Sum' name='[sum:R_Score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Recency]' derivation='Sum' name='[sum:Recency:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[SegmentRank (transactions_enriched.csv)]' derivation='Sum' name='[sum:SegmentRank (transactions_enriched.csv):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[SegmentRank]' derivation='Sum' name='[sum:SegmentRank:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[TotalItems]' derivation='Sum' name='[sum:TotalItems:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2364564309499906]' derivation='User' name='[usr:Calculation_2364564309499906:qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' />
+      </column-instance>
+      <column-instance column='[Calculation_2364564309499906]' derivation='User' name='[usr:Calculation_2364564309499906:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[Calculation_2364564312379399]' derivation='User' name='[usr:Calculation_2364564312379399:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2364564328374284]' derivation='User' name='[usr:Calculation_2364564328374284:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <column-instance column='[Calculation_2364564328374284]' derivation='User' name='[usr:Calculation_2364564328374284:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' />
+      </column-instance>
+      <column-instance column='[LastPurchase]' derivation='Year' name='[yr:LastPurchase:ok]' pivot='key' type='ordinal' />
+      <group hidden='true' name='[Inclusions (Country,Customer ID,Segment,YEAR(Last Purchase))]' name-style='unqualified' user:auto-column='include'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Country:nk]' />
+          <groupfilter function='level-members' level='[none:CustomerID:nk]' />
+          <groupfilter function='level-members' level='[none:Segment:nk]' />
+          <groupfilter function='level-members' level='[yr:LastPurchase:ok]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Segment:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Loyal Customers&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Champions&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;At Risk&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Hibernating&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Monetary:qk]&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Monetary:qk]&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:Monetary:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalItems:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564312379399:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564309499906:qk:1]&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:Quantity:qk]&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:PC1:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:InvoiceNo:qk]&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:SegmentRank:qk]&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:F_Score:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Recency:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[med:Recency:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Recency:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:Recency:qk]&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:M_Score:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:R_Score:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:R_Score (transactions_enriched.csv):qk]&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564328374284:qk:2]&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:SegmentRank (transactions_enriched.csv):qk]&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564309499906:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564328374284:qk]&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:M_Score (transactions_enriched.csv):qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:F_Score (transactions_enriched.csv):qk]&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:RFM_Score:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:PC2:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Frequency:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Frequency:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:Frequency:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Segment (transactions_enriched.csv):nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Loyal Customers&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Champions&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;At Risk&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Hibernating&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='CustomerID' />
+        <field-sort-custom-order field='Calculation_2364564328374284' />
+        <field-sort-custom-order field='Calculation_2364564309000192' />
+        <field-sort-custom-order field='Country' />
+        <field-sort-custom-order field='Segment' />
+        <field-sort-custom-order field='Calculation_2364564319629322' />
+        <field-sort-custom-order field='Calculation_2364564313149449' />
+        <field-sort-custom-order field='Calculation_2364564309803011' />
+        <field-sort-custom-order field='SegmentRank' />
+        <field-sort-custom-order field='Cluster' />
+        <field-sort-custom-order field='Recency' />
+        <field-sort-custom-order field='Frequency' />
+        <field-sort-custom-order field='Monetary' />
+        <field-sort-custom-order field='Calculation_2364564309499906' />
+        <field-sort-custom-order field='TotalItems' />
+        <field-sort-custom-order field='R_Score' />
+        <field-sort-custom-order field='F_Score' />
+        <field-sort-custom-order field='M_Score' />
+        <field-sort-custom-order field='RFM_Score' />
+        <field-sort-custom-order field='FirstPurchase' />
+        <field-sort-custom-order field='LastPurchase' />
+        <field-sort-custom-order field='PC1' />
+        <field-sort-custom-order field='PC2' />
+      </field-sort-info>
+      <object-graph>
+        <objects>
+          <object caption='customers_segmented.csv' id='customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1'>
+            <properties context=''>
+              <relation connection='textscan.012k7pr1d8xiuz14zo53q0n39jbi' name='customers_segmented.csv' table='[customers_segmented#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='CustomerID' ordinal='0' />
+                  <column datatype='string' name='Country' ordinal='1' />
+                  <column datatype='string' name='Segment' ordinal='2' />
+                  <column datatype='integer' name='SegmentRank' ordinal='3' />
+                  <column datatype='string' name='Cluster' ordinal='4' />
+                  <column datatype='integer' name='Recency' ordinal='5' />
+                  <column datatype='integer' name='Frequency' ordinal='6' />
+                  <column datatype='real' name='Monetary' ordinal='7' />
+                  <column datatype='integer' name='TotalItems' ordinal='8' />
+                  <column datatype='integer' name='R_Score' ordinal='9' />
+                  <column datatype='integer' name='F_Score' ordinal='10' />
+                  <column datatype='integer' name='M_Score' ordinal='11' />
+                  <column datatype='integer' name='RFM_Score' ordinal='12' />
+                  <column datatype='datetime' name='FirstPurchase' ordinal='13' />
+                  <column datatype='datetime' name='LastPurchase' ordinal='14' />
+                  <column datatype='real' name='PC1' ordinal='15' />
+                  <column datatype='real' name='PC2' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='transactions_enriched.csv' id='transactions_enriched.csv_D88ED00C3E7347D28037204787E50345'>
+            <properties context=''>
+              <relation connection='textscan.012k7pr1d8xiuz14zo53q0n39jbi' name='transactions_enriched.csv' table='[transactions_enriched#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='InvoiceNo' ordinal='0' />
+                  <column datatype='string' name='StockCode' ordinal='1' />
+                  <column datatype='string' name='Description' ordinal='2' />
+                  <column datatype='integer' name='Quantity' ordinal='3' />
+                  <column datatype='datetime' name='InvoiceDate' ordinal='4' />
+                  <column datatype='real' name='UnitPrice' ordinal='5' />
+                  <column datatype='string' name='CustomerID' ordinal='6' />
+                  <column datatype='string' name='Country' ordinal='7' />
+                  <column datatype='real' name='TotalPrice' ordinal='8' />
+                  <column datatype='string' name='Segment' ordinal='9' />
+                  <column datatype='integer' name='SegmentRank' ordinal='10' />
+                  <column datatype='integer' name='R_Score' ordinal='11' />
+                  <column datatype='integer' name='F_Score' ordinal='12' />
+                  <column datatype='integer' name='M_Score' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[CustomerID]' />
+              <expression op='[CustomerID (transactions_enriched.csv)]' />
+            </expression>
+            <first-end-point object-id='customers_segmented.csv_F8D3E8CD95D54B4E8C8230B60304E2F1' />
+            <second-end-point object-id='transactions_enriched.csv_D88ED00C3E7347D28037204787E50345' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Click segment to filter' name='[Action1_A2501834E78D448097108647D8000222]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Customer vs Revenue Share' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Customer vs Revenue Share' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Hover highlight' name='[Action2_96323A1895BA41B58F2ECDA68BE177A1]'>
+      <activation auto-clear='true' type='on-hover' />
+      <source dashboard='Dashboard 1' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Segment' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Country Breakdown'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Country (transactions enriched.csv)' datatype='string' name='[Country (transactions_enriched.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Segment (transactions enriched.csv)' datatype='string' name='[Segment (transactions_enriched.csv)]' role='dimension' type='nominal' />
+            <column caption='Segment Rank' datatype='integer' name='[SegmentRank]' role='measure' type='quantitative' />
+            <column caption='Total Price' datatype='real' name='[TotalPrice]' role='measure' type='quantitative' />
+            <column-instance column='[Country (transactions_enriched.csv)]' derivation='None' name='[none:Country (transactions_enriched.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[Segment (transactions_enriched.csv)]' derivation='None' name='[none:Segment (transactions_enriched.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[SegmentRank]' derivation='Sum' name='[sum:SegmentRank:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TotalPrice]' derivation='Sum' name='[sum:TotalPrice:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Country (transactions_enriched.csv):nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([TotalPrice])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Country (transactions_enriched.csv):nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Country (transactions_enriched.csv):nk]' direction='DESC' using='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]' />
+          <computed-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]' direction='ASC' using='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:SegmentRank:qk]' />
+          <slices>
+            <column>[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Country (transactions_enriched.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]' scope='cols' value='Revenue' />
+            <format attr='height' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]' value='30' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]' value='c&quot;£ &quot;#,##0,K;&quot;£ &quot;-#,##0,K' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'><![CDATA[<[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Country (transactions_enriched.csv):nk]> · <[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true'><![CDATA[Revenue: £<[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Country (transactions_enriched.csv):nk]</rows>
+        <cols>[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]</cols>
+      </table>
+      <simple-id uuid='{E2664369-A181-4C29-853B-C62651C4F8E1}' />
+    </worksheet>
+    <worksheet name='Customer vs Revenue Share'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Segment revenue share' datatype='real' name='[Calculation_2364564309499906]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([Monetary])/TOTAL(SUM([Monetary]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Segment Customer Share' datatype='real' name='[Calculation_2364564328374284]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([CustomerID]) / TOTAL(COUNTD([CustomerID]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Monetary]' role='measure' type='quantitative' />
+            <column caption='Segment Rank' datatype='integer' name='[SegmentRank]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
+            <column-instance column='[SegmentRank]' derivation='Min' name='[min:SegmentRank:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2364564309499906]' derivation='User' name='[usr:Calculation_2364564309499906:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+            <column-instance column='[Calculation_2364564328374284]' derivation='User' name='[usr:Calculation_2364564328374284:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' />
+            </column-instance>
+          </datasource-dependencies>
+          <computed-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' direction='ASC' using='[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:SegmentRank:qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564328374284:qk]' scope='cols' value='true' />
+            <format attr='display' class='0' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564309499906:qk:1]' scope='cols' value='true' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564328374284:qk]' value='p0%' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564309499906:qk:1]' value='p0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564328374284:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564309499906:qk:1]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]</rows>
+        <cols>([federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564328374284:qk] + [federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564309499906:qk:1])</cols>
+      </table>
+      <simple-id uuid='{C4F0482A-BF91-4168-AF08-3CC272EA15E7}' />
+    </worksheet>
+    <worksheet name='KPI - AOV'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Average order value' datatype='real' name='[Calculation_2364564312379399]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM([TotalPrice])/COUNTD([InvoiceNo])' />
+            </column>
+            <column caption='Invoice No' datatype='integer' name='[InvoiceNo]' role='measure' type='quantitative' />
+            <column caption='Total Price' datatype='real' name='[TotalPrice]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2364564312379399]' derivation='User' name='[usr:Calculation_2364564312379399:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564312379399:qk]' value='n#,##0.0&quot; AOV&quot;;-#,##0.0&quot; AOV&quot;' />
+            <format attr='height' value='67' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564312379399:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Bold' fontsize='30'>&lt;</run>
+                <run fontname='Tableau Bold' fontsize='30'>[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564312379399:qk]</run>
+                <run fontname='Tableau Bold' fontsize='30'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4F0FF974-9588-46C5-8C84-2CDCF31F686C}' />
+    </worksheet>
+    <worksheet name='KPI - Revenue'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Total Price' datatype='real' name='[TotalPrice]' role='measure' type='quantitative' />
+            <column-instance column='[TotalPrice]' derivation='Sum' name='[sum:TotalPrice:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]' value='n&quot;£ &quot;#,##0,,.00M;-&quot;£ &quot;#,##0,,.00M' />
+            <format attr='height' value='67' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Bold' fontsize='30'>&lt;</run>
+                <run fontname='Tableau Bold' fontsize='30'>[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]</run>
+                <run fontname='Tableau Bold' fontsize='30'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4E369CD8-CC63-4BA5-AA93-4D4D2B849400}' />
+    </worksheet>
+    <worksheet name='KPI - Segment'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
+            <column-instance column='[Segment]' derivation='CountD' name='[ctd:Segment:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:Segment:qk]' value='n#,##0&quot; Segments&quot;;-#,##0&quot; Segments&quot;' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:Segment:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Bold' fontsize='30'>&lt;</run>
+                <run fontname='Tableau Bold' fontsize='30'>[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:Segment:qk]</run>
+                <run fontname='Tableau Bold' fontsize='30'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{469F2ADB-58B0-43AF-BD67-8670CCF11AFC}' />
+    </worksheet>
+    <worksheet name='KPI-Customers'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+            <column-instance column='[CustomerID]' derivation='CountD' name='[ctd:CustomerID:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='73' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:CustomerID:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:CustomerID:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontname='Tableau Bold' fontsize='25'>&lt;</run>
+                <run fontname='Tableau Bold' fontsize='25'>[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:CustomerID:qk]</run>
+                <run fontname='Tableau Bold' fontsize='25'>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{81F0B7B3-BFF2-41F2-B5FC-7A400F622A32}' />
+    </worksheet>
+    <worksheet name='Revenue Over Time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Invoice Date' datatype='datetime' name='[InvoiceDate]' role='dimension' type='ordinal' />
+            <column caption='Segment (transactions enriched.csv)' datatype='string' name='[Segment (transactions_enriched.csv)]' role='dimension' type='nominal' />
+            <column caption='SegmentRank (transactions enriched.csv)' datatype='integer' name='[SegmentRank (transactions_enriched.csv)]' role='measure' type='quantitative' />
+            <column caption='Total Price' datatype='real' name='[TotalPrice]' role='measure' type='quantitative' />
+            <column-instance column='[Segment (transactions_enriched.csv)]' derivation='None' name='[none:Segment (transactions_enriched.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[SegmentRank (transactions_enriched.csv)]' derivation='Sum' name='[sum:SegmentRank (transactions_enriched.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TotalPrice]' derivation='Sum' name='[sum:TotalPrice:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[InvoiceDate]' derivation='Month-Trunc' name='[tmn:InvoiceDate:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <computed-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]' direction='ASC' using='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:SegmentRank (transactions_enriched.csv):qk]' />
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]' value='c&quot;£ &quot;#,##0,K;&quot;£ &quot;-#,##0,K' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <encodings>
+              <color column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[<[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[<[federated.0jh68mc1e4hvsw11e64by09ibv76].[tmn:InvoiceDate:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[Revenue: <[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:TotalPrice:qk]</rows>
+        <cols>[federated.0jh68mc1e4hvsw11e64by09ibv76].[tmn:InvoiceDate:qk]</cols>
+      </table>
+      <simple-id uuid='{236FAEBE-09E0-4AFD-93BD-52192B48B27C}' />
+    </worksheet>
+    <worksheet name='Segment Profile'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Total customers in view' datatype='integer' name='[Calculation_2364564309000192]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNTD([CustomerID])' />
+            </column>
+            <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Frequency]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Monetary]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Recency]' role='measure' type='quantitative' />
+            <column caption='Segment Rank' datatype='integer' name='[SegmentRank]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
+            <column-instance column='[Frequency]' derivation='Avg' name='[avg:Frequency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Monetary]' derivation='Avg' name='[avg:Monetary:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Recency]' derivation='Avg' name='[avg:Recency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CustomerID]' derivation='CountD' name='[ctd:CustomerID:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[SegmentRank]' derivation='Min' name='[min:SegmentRank:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Monetary]' derivation='Sum' name='[sum:Monetary:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Recency]' derivation='Sum' name='[sum:Recency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2364564309000192]' derivation='User' name='[usr:Calculation_2364564309000192:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:CustomerID:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Recency:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Frequency:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Monetary:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:Monetary:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[usr:Calculation_2364564309000192:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:Recency:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <computed-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' direction='ASC' using='[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:SegmentRank:qk]' />
+          <slices>
+            <column>[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' value='203' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[ctd:CustomerID:qk]' value='n#,##0;-#,##0' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Recency:qk]' value='n#,##0.00&quot; Days&quot;;-#,##0.00&quot; Days&quot;' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Monetary:qk]' value='c&quot;£ &quot;#,##0.00;&quot;£ &quot;-#,##0.00' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[sum:Monetary:qk]' value='c&quot;£ &quot;#,##0;&quot;£ &quot;-#,##0' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Frequency:qk]' value='n#,##0.00&quot; Orders&quot;;-#,##0.00&quot; Orders&quot;' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' value='132' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[Multiple Values]' num-steps='5' palette='orange_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[Multiple Values]' />
+              <text column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]</rows>
+        <cols>[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{0C1A5DDB-AEF9-4FED-9420-6992262896EE}' />
+    </worksheet>
+    <worksheet name='Segment Scatter'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Frequency]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Monetary]' role='measure' type='quantitative' />
+            <column datatype='real' name='[PC1]' role='measure' type='quantitative' />
+            <column datatype='real' name='[PC2]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Recency]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
+            <column-instance column='[Frequency]' derivation='Avg' name='[avg:Frequency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Monetary]' derivation='Avg' name='[avg:Monetary:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PC1]' derivation='Avg' name='[avg:PC1:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[PC2]' derivation='Avg' name='[avg:PC2:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Recency]' derivation='Avg' name='[avg:Recency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CustomerID]' derivation='None' name='[none:CustomerID:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk]'>
+            <groupfilter function='level-members' level='[none:CustomerID:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]'>
+            <groupfilter function='level-members' level='[none:Segment:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <manual-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;At Risk&quot;</bucket>
+              <bucket>&quot;Hibernating&quot;</bucket>
+              <bucket>&quot;Loyal Customers&quot;</bucket>
+              <bucket>&quot;Champions&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]</column>
+            <column>[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:PC1:qk]' scope='cols' value='false' />
+            <format attr='display' class='0' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:PC2:qk]' scope='rows' value='false' />
+          </style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend-title'>
+            <_.fcp.IndividualControlFormatting.true...format attr='text-align' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' id='legend-color' value='left' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' />
+              <lod column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk]' />
+              <lod column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Recency:qk]' />
+              <lod column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Monetary:qk]' />
+              <lod column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Frequency:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[<[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]> ]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[Customer:<[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk]> ]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[Recency: <[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Recency:qk]> days ]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[Frequency: <[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Frequency:qk]> orders ]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[Monetary: £<[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:Monetary:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.36182320117950439' />
+                <format attr='mark-transparency' value='180' />
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:PC2:qk]</rows>
+        <cols>[federated.0jh68mc1e4hvsw11e64by09ibv76].[avg:PC1:qk]</cols>
+      </table>
+      <simple-id uuid='{F4ECE5AB-C655-43F5-A491-06FE3EC31B14}' />
+    </worksheet>
+    <worksheet name='Top Customers'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='customers_segmented+' name='federated.0jh68mc1e4hvsw11e64by09ibv76' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0jh68mc1e4hvsw11e64by09ibv76'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Customer ID' datatype='string' name='[CustomerID]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Frequency]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Monetary]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Recency]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Segment]' role='dimension' type='nominal' />
+            <column-instance column='[Frequency]' derivation='Min' name='[min:Frequency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Monetary]' derivation='Min' name='[min:Monetary:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Recency]' derivation='Min' name='[min:Recency:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CustomerID]' derivation='None' name='[none:CustomerID:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Recency:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Monetary:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Frequency:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Recency:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Frequency:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Monetary:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk]'>
+            <groupfilter count='20' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Monetary])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:CustomerID:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk]' direction='DESC' measure-to-sort-by='[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Frequency:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk]</column>
+            <column>[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' value='119' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Monetary:qk]' value='c&quot;£ &quot;#,##0;&quot;£ &quot;-#,##0' />
+            <format attr='text-format' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[min:Recency:qk]' value='n#,##0&quot; Days&quot;;-#,##0&quot; Days&quot;' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='vertical-align' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' value='auto' />
+            <format attr='text-align' field='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0jh68mc1e4hvsw11e64by09ibv76].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0jh68mc1e4hvsw11e64by09ibv76].[none:CustomerID:nk] / ([federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Country:nk] / [federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]))</rows>
+        <cols>[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{F56844BA-88E5-497C-A368-18C62A9FA1A8}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='900' maxwidth='1400' minheight='900' minwidth='1400' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='15666' id='3' param='horz' type-v2='layout-flow' w='98858' x='571' y='889'>
+            <zone forceUpdate='true' h='15666' id='7' type-v2='text' w='64644' x='571' y='889'>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#1c1917' fontname='Tableau Light' fontsize='18'>CUSTOMER SEGMENTATION · Online Retail II · 2009–2011</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='479' h='15666' id='8' is-fixed='true' param='vert' type-v2='layout-flow' w='34214' x='65215' y='889'>
+              <zone h='3916' id='16' name='Segment Scatter' pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' type-v2='color' w='34214' x='65215' y='889'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='3916' id='18' name='Customer vs Revenue Share' pane-specification-id='1' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' type-v2='color' w='34214' x='65215' y='4805'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='3916' id='32' name='Segment Profile' pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[Multiple Values]' type-v2='color' w='34214' x='65215' y='8721'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='3918' id='39' name='Revenue Over Time' pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]' type-v2='color' w='34214' x='65215' y='12637'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='10222' id='9' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='98858' x='571' y='16555'>
+            <zone h='10222' id='12' name='KPI - AOV' show-title='false' w='24715' x='571' y='16556'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='10222' id='11' name='KPI - Revenue' show-title='false' w='24714' x='25286' y='16556'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='10222' id='10' name='KPI-Customers' show-title='false' w='24714' x='50000' y='16556'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='10222' id='13' name='KPI - Segment' show-title='false' w='24715' x='74714' y='16556'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='27778' id='19' is-fixed='true' type-v2='layout-basic' w='98858' x='571' y='26777'>
+            <zone h='27778' id='14' param='horz' type-v2='layout-flow' w='98858' x='571' y='26777'>
+              <zone fixed-size='717' h='27778' id='15' is-fixed='true' name='Segment Scatter' w='51785' x='571' y='26777'>
+                <layout-cache minheight='150' minwidth='100' type-h='scalable' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='27778' id='22' name='Revenue Over Time' show-title='false' w='47073' x='52356' y='26777'>
+                <layout-cache minwidth='203' type-h='fixed' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='28222' id='17' name='Customer vs Revenue Share' w='49429' x='50000' y='54555'>
+            <layout-cache minwidth='342' type-h='fixed' type-w='scalable' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='18668' id='30' name='Country Breakdown' w='49429' x='571' y='80443'>
+            <layout-cache minwidth='220' type-h='fixed' type-w='scalable' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='25888' id='29' name='Top Customers' w='49429' x='571' y='54555'>
+            <layout-cache fixed-size-h='491' fixed-size-w='620' type-h='fixed' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='16334' id='31' name='Segment Profile' show-title='false' w='49429' x='50000' y='82777'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='2050' minheight='2050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='38' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='37' param='vert' type-v2='layout-flow' w='98858' x='571' y='889'>
+                <zone forceUpdate='true' h='15666' id='7' type-v2='text' w='64644' x='571' y='889'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#1c1917' fontname='Tableau Light' fontsize='18'>CUSTOMER SEGMENTATION · Online Retail II · 2009–2011</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='84' h='10222' id='12' is-fixed='true' name='KPI - AOV' show-title='false' w='24715' x='571' y='16556'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='84' h='10222' id='11' is-fixed='true' name='KPI - Revenue' show-title='false' w='24714' x='25286' y='16556'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='84' h='10222' id='10' is-fixed='true' name='KPI-Customers' show-title='false' w='24714' x='50000' y='16556'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='84' h='10222' id='13' is-fixed='true' name='KPI - Segment' show-title='false' w='24715' x='74714' y='16556'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='242' h='27778' id='15' is-fixed='true' name='Segment Scatter' w='51785' x='571' y='26777'>
+                  <layout-cache minheight='150' minwidth='100' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3916' id='16' name='Segment Scatter' pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' type-v2='color' w='34214' x='65215' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='242' h='27778' id='22' is-fixed='true' name='Revenue Over Time' show-title='false' w='47073' x='52356' y='26777'>
+                  <layout-cache minwidth='203' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='225' h='25888' id='29' is-fixed='true' name='Top Customers' w='49429' x='571' y='54555'>
+                  <layout-cache fixed-size-h='491' fixed-size-w='620' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='246' h='28222' id='17' is-fixed='true' name='Customer vs Revenue Share' w='49429' x='50000' y='54555'>
+                  <layout-cache minwidth='342' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3916' id='18' name='Customer vs Revenue Share' pane-specification-id='1' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' type-v2='color' w='34214' x='65215' y='4805'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='160' h='18668' id='30' is-fixed='true' name='Country Breakdown' w='49429' x='571' y='80443'>
+                  <layout-cache minwidth='220' type-h='fixed' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='139' h='16334' id='31' is-fixed='true' name='Segment Profile' show-title='false' w='49429' x='50000' y='82777'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='3918' id='32' name='Segment Profile' pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[Multiple Values]' type-v2='color' w='34214' x='65215' y='12637'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{211D1DE0-B1F2-4E7F-8B40-A15A43CB3189}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='37'>
+    <window class='worksheet' name='KPI-Customers'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2D2FD686-4335-4DAD-9B9C-43DD9490DA42}' />
+    </window>
+    <window class='worksheet' name='KPI - Revenue'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7CBDBFD3-2F06-4863-A1C2-BEB4621BF59B}' />
+    </window>
+    <window class='worksheet' name='KPI - AOV'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F6047A7A-C281-44E7-B75A-3064A4F0ACCA}' />
+    </window>
+    <window class='worksheet' name='KPI - Segment'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C6695929-3F35-45C2-BBC6-7EE7612163BD}' />
+    </window>
+    <window class='worksheet' name='Segment Scatter'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{A854FEB8-782F-4FC0-B6F4-3FAF996BA6A3}' />
+    </window>
+    <window class='worksheet' name='Customer vs Revenue Share'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AFF86458-DA35-422B-9E31-B600D0D91D67}' />
+    </window>
+    <window class='worksheet' name='Segment Profile'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[Multiple Values]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F4FD622A-DD1C-44C9-8F6A-D671F7DBE0C2}' />
+    </window>
+    <window class='worksheet' name='Revenue Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1819D66B-E4A9-45A5-B893-7098D639F6B3}' />
+    </window>
+    <window class='worksheet' name='Top Customers'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CAC40BE1-58BC-4A26-A365-F2C8E9868170}' />
+    </window>
+    <window class='worksheet' name='Country Breakdown'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0jh68mc1e4hvsw11e64by09ibv76].[none:Segment (transactions_enriched.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DF284CEC-C1FE-440A-95C9-4D180A3A42A8}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Country Breakdown' />
+        <viewpoint name='Customer vs Revenue Share' />
+        <viewpoint name='KPI - AOV'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI - Revenue'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='KPI - Segment' />
+        <viewpoint name='KPI-Customers'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Revenue Over Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Segment Profile' />
+        <viewpoint name='Segment Scatter'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Top Customers' />
+      </viewpoints>
+      <active id='22' />
+      <simple-id uuid='{F8DD33F9-3FC5-4AA1-8E86-896A37EBA65C}' />
+    </window>
+  </windows>
+</workbook>
